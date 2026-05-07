@@ -65,7 +65,6 @@ CIRCULAR_QUEUE/
 ---
 
 ## 👨‍💻 Author
-[Your Name]
-[Roll No. / Class]
-[Subject: Data Structures and Algorithms]
-[College Name]
+Tanvi kiran Botre
+Subject: Data Structures and Algorithms
+
