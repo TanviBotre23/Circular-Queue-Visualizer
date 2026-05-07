@@ -13,11 +13,11 @@ frontend visualizer that shows real-time queue operations.
 
 CIRCULAR_QUEUE/
 ├── backend/
-│   └── circular_queue.cpp     # C++ implementation of Circular Queue
+│   └── circular_queue.cpp     
 └── frontend/
-    ├── index.html             # Main UI and algorithm panel
-    ├── script.js              # Queue logic and DOM interactions
-    └── style.css              # Styling and layout
+    ├── index.html             
+    ├── script.js              
+    └── style.css              
 
 ---
 
