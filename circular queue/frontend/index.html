@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Queue Visualizer</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="main-wrapper">
+
+    <!-- LEFT PANEL -->
+    <div class="visualizer-panel">
+        <h1>Circular Queue Visualizer</h1>
+
+        <div class="definition">
+            A <b>Circular Queue</b> is a linear data structure following FIFO order where the last position
+            connects back to the first using modulo arithmetic.
+        </div>
+
+        <!-- CREATE QUEUE -->
+        <div class="controls create-controls">
+            <input type="number" id="queueSizeInput" value="5" min="3">
+            <button class="btn primary" id="createQueueBtn">Create Queue</button>
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="controls action-controls" style="display:none;">
+            <input type="text" id="valueInput" placeholder="Enter value">
+            <button class="btn success" id="enqueueBtn">Enqueue</button>
+            <button class="btn warning" id="dequeueBtn">Dequeue</button>
+            <button class="btn danger" id="resetBtn">Reset</button>
+        </div>
+
+        <div class="circle-container" id="queueDisplay"></div>
+
+        <div class="status">
+            <p>Front: <span id="frontIndex">-1</span></p>
+            <p>Rear: <span id="rearIndex">-1</span></p>
+        </div>
+
+        <p id="message"></p>
+    </div>
+
+    <!-- RIGHT PANEL -->
+    <div class="code-panel">
+        <h2>Circular Queue Algorithm</h2>
+
+        <div class="algo-section">
+            <h3>1. Enqueue Algorithm</h3>
+            <ol>
+                <li>Check overflow condition: if (rear + 1) % size == front</li>
+                <li>If queue is empty, set front = 0</li>
+                <li>Move rear using modulo arithmetic</li>
+                <li>Insert element at queue[rear]</li>
+            </ol>
+
+            <pre class="pseudocode">
+void enqueue(int value) {
+    if ((rear + 1) % size == front)
+        return; // Overflow
+
+    if (front == -1)
+        front = 0;
+
+    rear = (rear + 1) % size;
+    queue[rear] = value;
+}
+            </pre>
+        </div>
+
+        <div class="algo-section">
+            <h3>2. Dequeue Algorithm</h3>
+            <ol>
+                <li>Check underflow condition: if front == -1</li>
+                <li>Store element at front</li>
+                <li>If front == rear, reset both to -1</li>
+                <li>Else move front using modulo arithmetic</li>
+            </ol>
+
+            <pre class="pseudocode">
+int dequeue() {
+    if (front == -1)
+        return -1; // Underflow
+
+    int value = queue[front];
+
+    if (front == rear)
+        front = rear = -1;
+    else
+        front = (front + 1) % size;
+
+    return value;
+}
+            </pre>
+        </div>
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

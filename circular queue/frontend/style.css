@@ -1,0 +1,147 @@
+:root {
+    --primary: #3f51b5;
+    --success: #4caf50;
+    --warning: #ff9800;
+    --danger: #e53935;
+    --card: #ffffff;
+    --shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #e0f7fa, #c5cae9);
+    margin: 0;
+}
+
+/* MAIN LAYOUT */
+.main-wrapper {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* PANELS */
+.visualizer-panel, .code-panel {
+    flex: 1;
+    background: var(--card);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+/* TEXT */
+h1, h2 {
+    text-align: center;
+    color: var(--primary);
+}
+
+.definition {
+    background: #f4f7f6;
+    padding: 10px;
+    border-left: 4px solid var(--primary);
+    margin-bottom: 15px;
+}
+
+/* CONTROLS */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+input {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+/* BUTTONS */
+.btn {
+    padding: 8px 14px;
+    border: none;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.primary { background: var(--primary); }
+.success { background: var(--success); }
+.warning { background: var(--warning); }
+.danger  { background: var(--danger); }
+
+/* CIRCLE */
+.circle-container {
+    position: relative;
+    width: 350px;
+    height: 350px;
+    margin: 20px auto;
+    border-radius: 50%;
+    border: 2px dashed #ccc;
+}
+
+.queue-element {
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: #64b5f6;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.front { background: var(--success); }
+.rear { background: var(--warning); }
+
+.index-label {
+    position: absolute;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #555;
+}
+
+.status {
+    display: flex;
+    justify-content: space-around;
+    font-weight: bold;
+}
+
+#message {
+    margin-top: 10px;
+    text-align: center;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+/* ALGORITHM PANEL */
+.algo-section {
+    margin-bottom: 20px;
+}
+
+.algo-section h3 {
+    color: #444;
+}
+
+.algo-section ol {
+    font-size: 0.9em;
+}
+
+.pseudocode {
+    background: #272822;
+    color: #e0f7fa;
+    padding: 10px;
+    border-radius: 6px;
+    font-size: 0.85em;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+}
